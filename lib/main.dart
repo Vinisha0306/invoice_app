@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_app/pages/build_options/build_options_page.dart';
+import 'package:invoice_app/pages/build_options/company_details/company_details.dart';
+import 'package:invoice_app/pages/build_options/customer_details/customer_details.dart';
 import 'package:invoice_app/pages/home_page/home_page.dart';
 import 'package:invoice_app/pages/splesh_screens/splesh_screens.dart';
 import 'package:invoice_app/utils/routes_utils.dart';
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         MyRoutes.SpleshScreensPage: (context) => SpleshScreens(),
         MyRoutes.HomePage: (context) => HomePage(),
         MyRoutes.BuildOptionPage: (context) => BuildOptionPage(),
+        MyRoutes.BuildOptions[0]['route']: (context) => CompanyDetails(),
+        MyRoutes.BuildOptions[1]['route']: (context) => InvoicePage(),
       },
     );
   }

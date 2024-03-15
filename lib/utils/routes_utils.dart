@@ -5,14 +5,14 @@ class MyRoutes {
   static String PDFPage = 'pdf_page';
 
   static List BuildOptions = [
-    // {
-    //   'title': 'Customer Details',
-    //   'route': 'customer_details_page',
-    //   'icon': '',
-    // },
     {
       'title': 'Company Details',
       'route': 'company_details_page',
+      'icon': '',
+    },
+    {
+      'title': 'Customer Details',
+      'route': 'customer_details_page',
       'icon': '',
     },
   ];
