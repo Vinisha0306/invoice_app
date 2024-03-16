@@ -6,6 +6,10 @@ class Assets {
       'lib/pages/build_options/build_options_page.dart';
   static const String companyDetailsCompanyDetails =
       'lib/pages/build_options/company_details/company_details.dart';
+  static const String componetsCustomerBill =
+      'lib/pages/build_options/customer_details/componets/Customer_Bill.dart';
+  static const String componetsCustomerForm =
+      'lib/pages/build_options/customer_details/componets/Customer_Form.dart';
   static const String customerDetailsCustomerDetails =
       'lib/pages/build_options/customer_details/customer_details.dart';
   static const String formCompanyForm =

@@ -53,7 +53,12 @@ class _HomePageState extends State<HomePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context)
-                    .pushNamed(MyRoutes.BuildOptions[0]['route']);
+                    .pushNamed(MyRoutes.BuildOptions[0]['route'])
+                    .then(
+                      (value) => setState(
+                        () {},
+                      ),
+                    );
               },
               child: const Text('Company Details'),
             ),
