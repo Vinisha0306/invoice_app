@@ -3,18 +3,19 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 
 List billrow = ["", ""];
-List Textrow = [
-  [
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-  ],
-  [
-    TextEditingController(),
-    TextEditingController(),
-    TextEditingController(),
-  ],
+List<TextEditingController> TextProductRow = [
+  TextEditingController(),
+  TextEditingController(),
 ];
+List<TextEditingController> TextQtyRow = [
+  TextEditingController(),
+  TextEditingController(),
+];
+List<TextEditingController> TextPriceRow = [
+  TextEditingController(),
+  TextEditingController(),
+];
+List TotalRow = [];
 
 class Global {
   String? Name, email, contact, address, GSTIN;
