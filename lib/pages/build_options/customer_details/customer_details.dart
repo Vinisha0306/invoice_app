@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:invoice_app/pages/build_options/customer_details/componets/Customer_Bill.dart';
 import 'package:invoice_app/pages/build_options/customer_details/componets/Customer_Form.dart';
+import 'package:invoice_app/utils/routes_utils.dart';
 
 import '../../../utils/Globals.dart';
 
@@ -17,17 +18,19 @@ class InvoicePage extends StatefulWidget {
 class _InvoicePageState extends State<InvoicePage> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
+  // double Totalvalue() {
+  //   double Total = 0;
+  //
+  //   for (int i = 0; i < TotalRow.length; i++) {
+  //     Total += TotalRow[i];
+  //     count++;
+  //   }
+  //   return Total;
+  // }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double Totalvalue() {
-      double Total = 0;
-
-      for (int j = 0; j < TotalRow.length; j++) {
-        Total += TotalRow[j];
-      }
-      return Total;
-    }
 
     return GestureDetector(
       onTap: () {
@@ -147,31 +150,24 @@ class _InvoicePageState extends State<InvoicePage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          billrow.add("");
-                          TextProductRow.add(TextEditingController());
-                          TextQtyRow.add(TextEditingController());
-                          TextPriceRow.add(TextEditingController());
-
-                          setState(() {});
-                        },
-                        child: const Text('Add Product'),
-                      ),
-                      Container(
-                        height: 50,
-                        width: 150,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.black, width: 0.5),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text("Total : ${Totalvalue()}"),
-                      ),
-                    ],
+                  ElevatedButton(
+                    onPressed: () {
+                      billrow.add("");
+                      TextProductRow.add(TextEditingController());
+                      TextQtyRow.add(TextEditingController());
+                      TextPriceRow.add(TextEditingController());
+                      setState(() {});
+                    },
+                    child: const Text('Add Product'),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(MyRoutes.PDFPage);
+                    },
+                    child: const Text('Create PDF'),
                   ),
                 ],
               ),

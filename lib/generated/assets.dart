@@ -2,10 +2,10 @@
 class Assets {
   Assets._();
 
-  static const String buildOptionsBuildOptionsPage =
-      'lib/pages/build_options/build_options_page.dart';
   static const String companyDetailsCompanyDetails =
       'lib/pages/build_options/company_details/company_details.dart';
+  static const String componetsBuildOption =
+      'lib/pages/build_options/customer_details/componets/build_option.dart';
   static const String componetsCustomerBill =
       'lib/pages/build_options/customer_details/componets/Customer_Bill.dart';
   static const String componetsCustomerForm =
@@ -18,6 +18,9 @@ class Assets {
   static const String homePageHomePage = 'lib/pages/home_page/home_page.dart';
   static const String imagesWayBill = 'lib/assets/images/WayBill.png';
   static const String libMain = 'lib/main.dart';
+  static const String pDFPagePDFPage =
+      'lib/pages/build_options/PDFPage/PDFPage.dart';
+  static const String pagesHjk = 'lib/pages/hjk.dart';
   static const String spleshScreensSpleshScreens =
       'lib/pages/splesh_screens/splesh_screens.dart';
   static const String utilsGlobals = 'lib/utils/Globals.dart';

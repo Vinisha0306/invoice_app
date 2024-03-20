@@ -15,7 +15,10 @@ List<TextEditingController> TextPriceRow = [
   TextEditingController(),
   TextEditingController(),
 ];
-List TotalRow = [];
+List allTotal = [];
+double total = 0;
+
+int count = 0;
 
 class Global {
   String? Name, email, contact, address, GSTIN;

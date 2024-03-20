@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invoice_app/pages/build_options/build_options_page.dart';
+import 'package:invoice_app/pages/build_options/PDFPage/PDFPage.dart';
 import 'package:invoice_app/pages/build_options/company_details/company_details.dart';
 import 'package:invoice_app/pages/build_options/customer_details/customer_details.dart';
 import 'package:invoice_app/pages/home_page/home_page.dart';
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Color.fromARGB(255, 183, 153, 255),
       ),
       routes: {
-        MyRoutes.SpleshScreensPage: (context) => SpleshScreens(),
-        MyRoutes.HomePage: (context) => HomePage(),
-        MyRoutes.BuildOptionPage: (context) => BuildOptionPage(),
-        MyRoutes.BuildOptions[0]['route']: (context) => CompanyDetails(),
-        MyRoutes.BuildOptions[1]['route']: (context) => InvoicePage(),
+        MyRoutes.SpleshScreensPage: (context) => const SpleshScreens(),
+        MyRoutes.HomePage: (context) => const HomePage(),
+        MyRoutes.BuildOptions[0]['route']: (context) => const CompanyDetails(),
+        MyRoutes.BuildOptions[1]['route']: (context) => const InvoicePage(),
+        MyRoutes.PDFPage: (context) => const PDFPage(),
       },
     );
   }

@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:invoice_app/utils/Globals.dart';
 
 double CalculTotal({required index}) {
-  double total = 0;
-  double allTotal = 0;
-
   total = (double.tryParse(TextQtyRow[index].text) ?? 0) *
       (double.tryParse(TextPriceRow[index].text) ?? 0);
-
-  TotalRow.add(total);
+  allTotal.add(total);
   return total;
 }
 

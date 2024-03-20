@@ -102,6 +102,28 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
+                  'Company Details',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed(MyRoutes.BuildOptions[0]['route'])
+                        .then(
+                          (value) => setState(() {}),
+                        );
+                  },
+                  child: const Icon(Icons.add),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
                   'Invoices',
                   style: TextStyle(
                     fontSize: 24,
@@ -113,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.of(context)
                         .pushNamed(MyRoutes.BuildOptions[1]['route']);
                   },
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                 )
               ],
             )
