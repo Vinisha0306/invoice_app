@@ -19,9 +19,9 @@ class PDFPage extends StatefulWidget {
 class _PDFPageState extends State<PDFPage> {
   @override
   Widget build(BuildContext context) {
-    Future<Uint8List> getPDF() async {
-      ByteData byteData = await rootBundle.load(
-          "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg");
+    Future<Uint8List> getPDF() {
+      // ByteData byteData = await rootBundle.load(
+      //     "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg");
       pw.Document pdf = pw.Document();
 
       pdf.addPage(
