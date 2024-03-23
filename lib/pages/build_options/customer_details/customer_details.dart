@@ -169,13 +169,11 @@ class _InvoicePageState extends State<InvoicePage> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(MyRoutes.PDFPage);
+                          Navigator.of(context)
+                              .pushNamed(MyRoutes.PDFPage)
+                              .then((value) => Global.global.totalValue = 0);
                         },
                         child: const Text('Create PDF'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('Save'),
                       ),
                     ],
                   ),

@@ -33,12 +33,13 @@ class Global {
   int count = 0;
   static final Global global = Global();
   double totalValue = 0;
-  void calculateTotalValue() {
+  double calculateTotalValue() {
     for (var element in TextPriceRow) {
       totalValue += double.parse(element.text.isNotEmpty ? element.text : "0") *
           double.parse(TextQtyRow[TextPriceRow.indexOf(element)].text.isNotEmpty
               ? TextQtyRow[TextPriceRow.indexOf(element)].text
               : "0");
     }
+    return totalValue;
   }
 }
