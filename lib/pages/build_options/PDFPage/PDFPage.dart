@@ -280,13 +280,13 @@ class _PDFPageState extends State<PDFPage> {
                             pw.Text(
                               "Company Name : ${Global.global.Name ?? "0"}\t\t\t\t",
                               style: const pw.TextStyle(
-                                fontSize: 13,
+                                fontSize: 15,
                               ),
                             ),
                             pw.Text(
                               "Company Email : ${Global.global.email ?? "0"}",
                               style: const pw.TextStyle(
-                                fontSize: 13,
+                                fontSize: 15,
                               ),
                             ),
                           ],
@@ -296,13 +296,13 @@ class _PDFPageState extends State<PDFPage> {
                             pw.Text(
                               "Company GSTIN : ${Global.global.GSTIN ?? "0"}\t\t\t\t",
                               style: const pw.TextStyle(
-                                fontSize: 13,
+                                fontSize: 15,
                               ),
                             ),
                             pw.Text(
                               "Company Contact no. : ${Global.global.contact ?? "0"}",
                               style: const pw.TextStyle(
-                                fontSize: 13,
+                                fontSize: 15,
                               ),
                             ),
                           ],
