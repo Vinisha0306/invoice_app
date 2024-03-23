@@ -67,6 +67,11 @@ class _CompanyDetailsState extends State<CompanyDetails> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
+            image: const DecorationImage(
+              image: NetworkImage(
+                  "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: SingleChildScrollView(
             child: Column(

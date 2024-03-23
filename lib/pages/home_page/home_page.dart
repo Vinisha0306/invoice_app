@@ -94,52 +94,61 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: const Color.fromARGB(255, 183, 153, 255),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Company Details',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+                "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Company Details',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushNamed(MyRoutes.BuildOptions[0]['route'])
-                        .then(
-                          (value) => setState(() {}),
-                        );
-                  },
-                  child: const Icon(Icons.add),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  'Invoices',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed(MyRoutes.BuildOptions[0]['route'])
+                          .then(
+                            (value) => setState(() {}),
+                          );
+                    },
+                    child: const Icon(Icons.add),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Invoices',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushNamed(MyRoutes.BuildOptions[1]['route']);
-                  },
-                  child: const Icon(Icons.add),
-                )
-              ],
-            )
-          ],
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed(MyRoutes.BuildOptions[1]['route']);
+                    },
+                    child: const Icon(Icons.add),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

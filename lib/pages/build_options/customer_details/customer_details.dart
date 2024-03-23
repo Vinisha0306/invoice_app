@@ -18,16 +18,6 @@ class InvoicePage extends StatefulWidget {
 class _InvoicePageState extends State<InvoicePage> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
-  // double Totalvalue() {
-  //   double Total = 0;
-  //
-  //   for (int i = 0; i < TotalRow.length; i++) {
-  //     Total += TotalRow[i];
-  //     count++;
-  //   }
-  //   return Total;
-  // }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -53,7 +43,11 @@ class _InvoicePageState extends State<InvoicePage> {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
+              image: const DecorationImage(
+                image: NetworkImage(
+                    "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
             child: SingleChildScrollView(
               child: Column(
@@ -169,13 +163,11 @@ class _InvoicePageState extends State<InvoicePage> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(MyRoutes.PDFPage);
+                          Navigator.of(context)
+                              .pushNamed(MyRoutes.PDFPage)
+                              .then((value) => Global.global.totalValue = 0);
                         },
                         child: const Text('Create PDF'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('Save'),
                       ),
                     ],
                   ),

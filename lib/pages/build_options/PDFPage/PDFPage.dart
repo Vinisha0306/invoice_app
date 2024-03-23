@@ -20,8 +20,8 @@ class _PDFPageState extends State<PDFPage> {
   @override
   Widget build(BuildContext context) {
     Future<Uint8List> getPDF() async {
-      ByteData byteData =
-          await rootBundle.load("lib/assets/images/WayBill.png");
+      ByteData byteData = await rootBundle.load(
+          "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg");
       pw.Document pdf = pw.Document();
 
       pdf.addPage(
@@ -256,6 +256,9 @@ class _PDFPageState extends State<PDFPage> {
                       border: pw.Border.all(width: 1.5, color: PdfColors.black),
                       borderRadius: pw.BorderRadius.circular(5),
                     ),
+                    alignment: pw.Alignment.centerRight,
+                    child: pw.Text(
+                        'Total = ${Global.global.calculateTotalValue()}'),
                   ),
                   pw.SizedBox(height: 5),
                   pw.Container(
@@ -324,7 +327,7 @@ class _PDFPageState extends State<PDFPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('PDF'),
+        title: const Text('PDF'),
       ),
       body: PdfPreview(
         build: (format) => getPDF(),
