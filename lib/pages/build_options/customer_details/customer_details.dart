@@ -82,6 +82,7 @@ class _InvoicePageState extends State<InvoicePage> {
                     width: 150,
                     child: TextField(
                       textInputAction: TextInputAction.next,
+                      controller: Global.global.BillN,
                       decoration: InputDecoration(
                         hintText: 'Bill No.',
                         hintStyle: TextStyle(
@@ -96,6 +97,7 @@ class _InvoicePageState extends State<InvoicePage> {
                     width: 150,
                     child: TextField(
                       textInputAction: TextInputAction.next,
+                      controller: Global.global.Date,
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
                         hintText: 'Invoice Date',
@@ -112,7 +114,7 @@ class _InvoicePageState extends State<InvoicePage> {
                   Container(
                     height: 40,
                     width: size.width,
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -129,15 +131,15 @@ class _InvoicePageState extends State<InvoicePage> {
                     height: 8,
                   ),
                   ...List.generate(
-                    billrow.length,
+                    Global.global.billrow.length,
                     (index) => Column(
                       children: [
                         Bill(
                             onPressed: () {
-                              billrow.removeAt(index);
-                              TextProductRow.removeAt(index);
-                              TextQtyRow.removeAt(index);
-                              TextPriceRow.removeAt(index);
+                              Global.global.billrow.removeAt(index);
+                              Global.global.TextProductRow.removeAt(index);
+                              Global.global.TextQtyRow.removeAt(index);
+                              Global.global.TextPriceRow.removeAt(index);
                               setState(() {});
                             },
                             index: index),
@@ -152,10 +154,10 @@ class _InvoicePageState extends State<InvoicePage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      billrow.add("");
-                      TextProductRow.add(TextEditingController());
-                      TextQtyRow.add(TextEditingController());
-                      TextPriceRow.add(TextEditingController());
+                      Global.global.billrow.add("");
+                      Global.global.TextProductRow.add(TextEditingController());
+                      Global.global.TextQtyRow.add(TextEditingController());
+                      Global.global.TextPriceRow.add(TextEditingController());
                       setState(() {});
                     },
                     child: const Text('Add Product'),
@@ -163,11 +165,19 @@ class _InvoicePageState extends State<InvoicePage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(MyRoutes.PDFPage);
-                    },
-                    child: const Text('Create PDF'),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(MyRoutes.PDFPage);
+                        },
+                        child: const Text('Create PDF'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Save'),
+                      ),
+                    ],
                   ),
                 ],
               ),

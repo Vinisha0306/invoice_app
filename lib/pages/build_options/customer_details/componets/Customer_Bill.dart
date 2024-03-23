@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_app/utils/Globals.dart';
 
-double CalculTotal({required index}) {
-  total = (double.tryParse(TextQtyRow[index].text) ?? 0) *
-      (double.tryParse(TextPriceRow[index].text) ?? 0);
-  allTotal.add(total);
-  return total;
-}
+
 
 Widget Bill({required onPressed, required index}) {
   return Row(
@@ -33,7 +28,7 @@ Widget Bill({required onPressed, required index}) {
         flex: 4,
         child: TextField(
           textInputAction: TextInputAction.next,
-          controller: TextProductRow[index],
+          controller: Global.global.TextProductRow[index],
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -48,7 +43,7 @@ Widget Bill({required onPressed, required index}) {
         flex: 2,
         child: TextField(
           textInputAction: TextInputAction.next,
-          controller: TextQtyRow[index],
+          controller: Global.global.TextQtyRow[index],
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -63,7 +58,7 @@ Widget Bill({required onPressed, required index}) {
         flex: 3,
         child: TextField(
           textInputAction: TextInputAction.done,
-          controller: TextPriceRow[index],
+          controller: Global.global.TextPriceRow[index],
           decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -83,7 +78,7 @@ Widget Bill({required onPressed, required index}) {
             border: Border.all(color: Colors.black, width: 0.5),
           ),
           alignment: Alignment.center,
-          child: Text("${CalculTotal(index: index)}"),
+          child: Text("${Global.global.CalculTotal(index: index)}"),
         ),
       ),
       Expanded(
