@@ -14,6 +14,7 @@ class Assets {
       'lib/pages/build_options/company_details/form/company_form.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
   static const String homePageHomePage = 'lib/pages/home_page/home_page.dart';
+  static const String imagesBg = 'lib/assets/images/bg.jpg';
   static const String imagesWayBill = 'lib/assets/images/WayBill.png';
   static const String libMain = 'lib/main.dart';
   static const String pDFPagePDFPage =

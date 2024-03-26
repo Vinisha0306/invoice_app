@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:invoice_app/pages/build_options/company_details/form/company_form.dart';
 
 import '../../../utils/Globals.dart';
+import '../../../utils/routes_utils.dart';
 import '../../../widgets/SnackBar.dart';
 
 class CompanyDetails extends StatefulWidget {
@@ -68,8 +69,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
             image: const DecorationImage(
-              image: NetworkImage(
-                  "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg"),
+              image: AssetImage("lib/assets/images/bg.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -121,6 +121,16 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                   height: s.height * 0.02,
                 ),
                 Company_Form(formkey: formkey, s: s),
+                const SizedBox(
+                  height: 30,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                        context, MyRoutes.BuildOptions[1]['route']);
+                  },
+                  child: Text('Next'),
+                ),
               ],
             ),
           ),

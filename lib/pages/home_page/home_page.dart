@@ -97,13 +97,12 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-                "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg"),
+            image: AssetImage("lib/assets/images/bg.jpg"),
             fit: BoxFit.cover,
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: [
               Row(

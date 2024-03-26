@@ -44,8 +44,7 @@ class _InvoicePageState extends State<InvoicePage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               image: const DecorationImage(
-                image: NetworkImage(
-                    "https://drvandanaverma.in/wp-content/uploads/2019/05/parallax-bg.jpg"),
+                image: AssetImage("lib/assets/images/bg.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
